@@ -2,25 +2,17 @@
 <htmL> 
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script> 
-  <script src="//js.leapmotion.com/0.2.0-beta1/leap.min.js"></script>
-
+  <script src="static/js/leap.min.js"></script>
 
 </head>
 <body>
   <canvas id="canvas" width="1100" height="500"></canvas> 
 
 <script>
-var controllerOptions = { enableGestures: true },
-    width = 960,
-    height = 500,
-    // canvas = d3.select('div#container')
-    //     .append('canvas')
-    //     .attr('width', width)
-    //     .attr('height', height).node(),
-    ctx = canvas.getContext('2d'),
-    before = {},
-    after = {},
-    // color = d3.scale.category20();
+var controllerOptions = { enableGestures: true };
+Leap.loop(controllerOptions, function(frame) {
+
+})
 
 
 
