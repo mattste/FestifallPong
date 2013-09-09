@@ -29,11 +29,9 @@
     var brutusIMG = new Image();
     brutusIMG.src = "static/img/brutus.jpg";
     ctx.beginPath();
-    // ctx.fillRect(50, 50, 50, 50);
     // ctx.arc(x, y, r, 0, Math.PI*2, true);
-    ctx.drawImage(brutusIMG, x, y);
-    
-    // ctx.fill();
+    ctx.drawImage(brutusIMG, x, y, r*4, r*4);
+    ctx.fill();
   }
 
   function rect(x,y,w,h) {
@@ -117,12 +115,12 @@
 
   function draw() {
     clear();
-    ctx.fillStyle = "#FAF7F8";
+    ctx.fillStyle = "#ff3d00";
     rect(0,0, WIDTH, HEIGHT);
     drawScoreboard(leftScore,rightScore);
     draw_paddles();
     ctx.fillStyle = "#444444";
-    circle(x, y, 40);
+    circle(x, y, 10);
 
     if (x + dx > (WIDTH-LeftPaddleW) || x + dx < LeftPaddleW){
       if( ( y < LeftPaddleY+LeftPaddleH && y > LeftPaddleY) && x < WIDTH/2){
