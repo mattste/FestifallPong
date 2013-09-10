@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <htmL> 
 <head>
+  <style type="text/css" media="screen">
+    canvas { background:url(static/img/logo.jpg) }
+  </style>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -9,14 +12,11 @@
 </head>
 <body>
   <div>
-    <input type="text" name="date" id="date" />
-  </div>
-  <div>
-  <canvas id="canvas" width="1900" height="1000"></canvas>
+  <canvas id="canvas" width="1900" height="1050">  
+  </canvas>
   </div> 
 
 <script>
-  $( "#date" ).datepicker();
   var LeftPaddleY;
   var RightPaddleY;
 
@@ -25,10 +25,10 @@
   var ctx;
   var x = 300;
   var y = 300;
-  var dx = 1.5;
-  var dy = 1.6;
+  var dx = 3.7;
+  var dy = 3.8;
   var WIDTH = 1900;
-  var HEIGHT = 1000; 
+  var HEIGHT = 1050; 
   var intervalID;
 
   function circle(x,y,r) {
@@ -121,8 +121,8 @@
 
   function draw() {
     clear();
-    ctx.fillStyle = "#ff3d00";
-    rect(0,0, WIDTH, HEIGHT);
+    // ctx.fillStyle = "#ff3d00";
+    // rect(0,0, WIDTH, HEIGHT);
     drawScoreboard(leftScore,rightScore);
     draw_paddles();
     ctx.fillStyle = "#444444";
@@ -149,8 +149,8 @@
         }
         x = 300+(Math.random()*20);
         y = 300+(Math.random()*20);
-        dx = 1.5+(Math.random()/2);
-        dy = 1.6+(Math.random()/2);
+        dx = 3.7+(Math.random()/2);
+        dy = 3.8+(Math.random()/2);
       }, 200);
       //endGame();
       //clearInterval(intervalID);
